@@ -12,7 +12,6 @@ class Node:
             data (int): The data of the new Node.
             next_node (Node): The next node of the new Node.
         """
-
         self.data = data
         self.next_node = next_node
 
@@ -37,6 +36,7 @@ class Node:
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList:
     """Represent a singly-linked list."""
@@ -64,8 +64,8 @@ class SinglyLinkedList:
             while (tmp.next_node is not None and
                     tmp.next_node.data < value):
                 tmp = tmp.next_node
-                new.next_node = tmp.next_node
-                tmp.next_node = new
+            new.next_node = tmp.next_node
+            tmp.next_node = new
 
     def __str__(self):
         """Define the print() representation of a SinglyLinkedList."""
@@ -74,4 +74,4 @@ class SinglyLinkedList:
         while tmp is not None:
             values.append(str(tmp.data))
             tmp = tmp.next_node
-            return ('\n'.join(values))
+        return ('\n'.join(values))
