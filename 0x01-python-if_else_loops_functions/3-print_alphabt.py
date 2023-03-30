@@ -2,4 +2,4 @@
 
 for letter in string.ascii_lowercase:
     if letter not in "qe":
-        print(letter, end="")
+        print("{}".format(letter), end="")
